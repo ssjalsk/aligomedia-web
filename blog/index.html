@@ -1,108 +1,95 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>바이럴 백과사전 | 알리고미디어</title>
-    <meta name="description" content="언론보도, 리뷰마케팅, 바이럴 마케팅에 관한 실전 정보를 알리고미디어가 정리합니다.">
-    <meta name="keywords" content="바이럴마케팅, 언론보도대행, 리뷰마케팅, 쿠팡리뷰, 보도자료, 알리고미디어">
-    <meta name="robots" content="index,follow">
-    <link rel="canonical" href="https://aligomedia.co.kr/blog/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="바이럴 백과사전 | 알리고미디어">
-    <meta property="og:description" content="언론보도, 리뷰마케팅, 바이럴 마케팅에 관한 실전 정보를 알리고미디어가 정리합니다.">
-    <meta property="og:url" content="https://aligomedia.co.kr/blog/">
-    <meta property="og:site_name" content="알리고미디어">
-    <link rel="icon" type="image/png" href="https://aligomedia.co.kr/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <style>
-        *{box-sizing:border-box;margin:0;padding:0;}
-        html{scroll-behavior:smooth;}
-        body{font-family:'Noto Sans KR',sans-serif;background:#fff;color:#1a1a1a;line-height:1.7;font-size:16px;}
-        /* ── 헤더 ── */
-        header{position:sticky;top:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(10px);padding:0 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;z-index:1000;height:80px;}
-        .logo-area img{height:60px;width:auto;display:block;}
-        .header-brand-text{font-size:1.2rem;font-weight:900;letter-spacing:-0.5px;color:#1a1a1a;position:absolute;left:50%;transform:translateX(-50%);}
-        .nav-menu{display:flex;gap:2rem;}
-        .nav-menu a{text-decoration:none;color:#1a1a1a;font-weight:700;font-size:0.9rem;padding:8px 12px;transition:0.3s;}
-        .nav-menu a:hover,.nav-menu a.active{color:#2e4a8f;}
-        /* ── 페이지 헤더 ── */
-        .page-hero{background:linear-gradient(135deg,#2e4a8f 0%,#1a2f6b 100%);color:#fff;text-align:center;padding:70px 5% 60px;}
-        .page-hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;letter-spacing:-1px;margin-bottom:14px;}
-        .page-hero p{font-size:1.05rem;opacity:0.85;max-width:600px;margin:0 auto;}
-        /* ── 글 목록 ── */
-        .blog-container{max-width:1100px;margin:0 auto;padding:60px 5%;}
-        .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:32px;}
-        /* ── 카드 ── */
-        .post-card{border:1px solid #eee;border-radius:16px;overflow:hidden;transition:box-shadow 0.3s,transform 0.3s;display:flex;flex-direction:column;}
-        .post-card:hover{box-shadow:0 8px 32px rgba(46,74,143,0.12);transform:translateY(-4px);}
-        .card-body{padding:24px;flex:1;display:flex;flex-direction:column;}
-        .card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
-        .card-tag{background:#eef1fa;color:#2e4a8f;font-size:0.75rem;font-weight:700;padding:4px 10px;border-radius:20px;}
-        .card-title{font-size:1.05rem;font-weight:900;letter-spacing:-0.3px;margin-bottom:10px;line-height:1.4;color:#1a1a1a;text-decoration:none;display:block;}
-        .card-title:hover{color:#2e4a8f;}
-        .card-summary{font-size:0.88rem;color:#666;line-height:1.65;flex:1;margin-bottom:18px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
-        .card-meta{font-size:0.8rem;color:#aaa;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f0f0f0;padding-top:14px;margin-top:auto;}
-        .card-read{color:#2e4a8f;font-weight:700;font-size:0.83rem;text-decoration:none;}
-        .card-read:hover{text-decoration:underline;}
-        /* ── 빈 상태 ── */
-        .empty-state{text-align:center;padding:80px 20px;color:#aaa;}
-        .empty-state .icon{font-size:3.5rem;margin-bottom:16px;}
-        .empty-state p{font-size:1rem;}
-        /* ── 푸터 ── */
-        footer{padding:50px 5%;background:#fff;border-top:1px solid #eee;}
-        .footer-content{max-width:1100px;margin:0 auto;display:flex;gap:30px;align-items:flex-start;}
-        .footer-info{font-size:0.83rem;color:#555;line-height:1.8;}
-        .footer-copy{margin-top:20px;font-size:0.78rem;color:#bbb;}
-        @media(max-width:768px){
-            .nav-menu{gap:1rem;}
-            .nav-menu a{font-size:0.8rem;padding:6px 8px;}
-            .blog-grid{grid-template-columns:1fr;}
-            .header-brand-text{display:none;}
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>바이럴 백과사전 | 알리고미디어</title>
+<meta name="description" content="알리고미디어 바이럴 마케팅 인사이트 블로그">
+<link rel="icon" type="image/png" href="https://aligomedia.co.kr/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans KR',sans-serif;background:#f7f9fc;color:#1a1a1a;}
+header{position:sticky;top:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(10px);padding:0 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;z-index:1000;height:80px;}
+.logo-area img{height:60px;width:auto;}
+.nav-menu{display:flex;gap:2rem;}
+.nav-menu a{text-decoration:none;color:#1a1a1a;font-weight:700;font-size:0.9rem;padding:8px 12px;transition:0.3s;}
+.nav-menu a:hover,.nav-menu a.active{color:#2e4a8f;}
+.page-hero{background:linear-gradient(135deg,#2e4a8f 0%,#1a2f6b 100%);color:#fff;padding:60px 5% 50px;text-align:center;}
+.page-hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;letter-spacing:-1px;margin-bottom:12px;}
+.page-hero p{font-size:1rem;opacity:0.8;}
+.blog-grid{max-width:1100px;margin:0 auto;padding:50px 5%;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:28px;}
+.blog-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 14px rgba(46,74,143,.08);text-decoration:none;color:inherit;transition:box-shadow .2s,transform .2s;display:block;}
+.blog-card:hover{box-shadow:0 8px 32px rgba(46,74,143,.16);transform:translateY(-3px);}
+.card-thumb{width:100%;height:200px;object-fit:cover;display:block;}
+.card-thumb-placeholder{width:100%;height:200px;background:#e8edfa;display:flex;align-items:center;justify-content:center;font-size:3rem;}
+.card-body{padding:20px;}
+.card-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
+.tag{background:#e8edfa;color:#2e4a8f;font-size:0.75rem;font-weight:700;padding:3px 10px;border-radius:20px;}
+.card-title{font-size:1.05rem;font-weight:800;line-height:1.4;margin-bottom:8px;letter-spacing:-0.3px;}
+.card-summary{font-size:0.88rem;color:#555;line-height:1.6;margin-bottom:12px;}
+.card-date{font-size:0.8rem;color:#aaa;}
+footer{padding:40px 5%;background:#fff;border-top:1px solid #eee;margin-top:40px;}
+.footer-info{font-size:0.83rem;color:#555;line-height:1.8;max-width:1100px;margin:0 auto;}
+.footer-copy{margin-top:12px;font-size:0.78rem;color:#bbb;}
+@media(max-width:768px){.nav-menu{gap:1rem;}.nav-menu a{font-size:0.8rem;padding:6px 8px;}}
+</style>
 </head>
 <body>
 <header>
-    <div class="logo-area">
-        <a href="https://aligomedia.co.kr">
-            <img src="https://aligomedia.co.kr/image_4.png" alt="알리고미디어 로고" height="60">
-        </a>
-    </div>
-    <div class="header-brand-text">알리고미디어</div>
-    <nav class="nav-menu">
-        <a href="https://aligomedia.co.kr/#pr-section">언론보도대행</a>
-        <a href="https://aligomedia.co.kr/#review-section">리뷰마케팅</a>
-        <a href="https://aligomedia.co.kr/#process-section">업무프로세스</a>
-        <a href="/blog/" class="active">바이럴 백과사전</a>
-    </nav>
+<div class="logo-area">
+<a href="https://aligomedia.co.kr"><img src="https://aligomedia.co.kr/image_4.png" alt="알리고미디어 로고" height="60"></a>
+</div>
+<nav class="nav-menu">
+<a href="https://aligomedia.co.kr/#pr-section">언론보도대행</a>
+<a href="https://aligomedia.co.kr/#review-section">리뷰마케팅</a>
+<a href="https://aligomedia.co.kr/#process-section">업무프로세스</a>
+<a href="/blog/" class="active">바이럴 백과사전</a>
+</nav>
 </header>
-
 <section class="page-hero">
-    <h1>📖 바이럴 백과사전</h1>
-    <p>언론보도, 리뷰마케팅, 바이럴 마케팅의 실전 노하우를 알리고미디어가 직접 정리합니다.</p>
+<h1>📚 바이럴 백과사전</h1>
+<p>마케팅 인사이트와 업계 트렌드를 한눈에</p>
 </section>
+<div class="blog-grid">
 
-<main class="blog-container">
-    <div class="blog-grid" id="post-grid">
-        <!-- 게시글이 발행되면 이 자리에 카드가 채워집니다 -->
-        <div class="empty-state" style="grid-column:1/-1;">
-            <div class="icon">✍️</div>
-            <p>아직 게시글이 없습니다.<br>첫 번째 글이 곧 올라올 예정입니다!</p>
-        </div>
-    </div>
-</main>
-
+<a href="/blog/20260825070557-변호사-언론홍보-고민하고-있을-떈-매체사-많은-이-곳/" class="blog-card">
+  <img class="card-thumb" src="https://aligomedia.co.kr/blog/images/20260825070016584-qekk__1_.png" alt="" loading="lazy">
+  <div class="card-body">
+    <div class="card-tags"><span class="tag">#변호사언론홍보</span><span class="tag">#언론홍보</span><span class="tag">#언론홍보대행사</span></div>
+    <h2 class="card-title">변호사 언론홍보 고민하고 있을 떈? 매체사 많은 이 곳</h2>
+    <p class="card-summary">변호사언론홍보, 언론홍보, 언론홍보대행사, 언론보도대행</p>
+    <div class="card-date">2026-08-25</div>
+  </div>
+</a>
+<a href="/blog/20260821073418-병원언론홍보-브랜딩은-보도자료배포로-하자/" class="blog-card">
+  <img class="card-thumb" src="https://aligomedia.co.kr/blog/images/20260821072702126-tggtk__1_.png" alt="" loading="lazy">
+  <div class="card-body">
+    <div class="card-tags"><span class="tag">#병원언론홍보</span><span class="tag">#언론홍보대행사</span><span class="tag">#언론보도대행사</span></div>
+    <h2 class="card-title">병원언론홍보 브랜딩은 보도자료배포로 하자</h2>
+    <p class="card-summary">병원언론홍보, 언론홍보대행사, 언론보도대행사</p>
+    <div class="card-date">2026-08-21</div>
+  </div>
+</a>
+<a href="/blog/20260821065056-쿠팡-최신성-리뷰-찾아보고-가구매를-선택하자/" class="blog-card">
+  <img class="card-thumb" src="https://aligomedia.co.kr/blog/images/20260821064305225-13.png" alt="" loading="lazy">
+  <div class="card-body">
+    <div class="card-tags"><span class="tag">#쿠팡최신성리뷰</span><span class="tag">#쿠팡가구매</span><span class="tag">#쿠팡리뷰업체</span></div>
+    <h2 class="card-title">쿠팡 최신성 리뷰 찾아보고 가구매를 선택하자</h2>
+    <p class="card-summary">쿠팡최신성리뷰, 쿠팡가구매, 쿠팡리뷰업체, 쿠팡리뷰마케팅
+스마트스토어리뷰작업, 네이버쇼핑리뷰, 리뷰마케팅</p>
+    <div class="card-date">2026-08-21</div>
+  </div>
+</a>
+</div>
 <footer>
-    <div class="footer-content">
-        <div class="footer-info">
-            <div style="font-weight:800;font-size:1rem;margin-bottom:8px;">알리고미디어</div>
-            대표 : 박철규, 한용범 | 사업자등록번호 : 161-22-02310<br>
-            소재지 : 서울 마포구 양화로 64, 8층 LS-814호 | Email : helper@aligomedia.kr
-            <div class="footer-copy">© Aligo Media. All rights reserved.</div>
-        </div>
-    </div>
+<div class="footer-info">
+<div style="font-weight:800;font-size:1rem;margin-bottom:8px;">알리고미디어</div>
+대표 : 박철규, 한용범 | 사업자등록번호 : 161-22-02310<br>
+소재지 : 서울 마포구 양화로 64, 8층 LS-814호 | Email : helper@aligomedia.kr
+<div class="footer-copy">© Aligo Media. All rights reserved.</div>
+</div>
 </footer>
 </body>
 </html>
