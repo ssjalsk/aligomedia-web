@@ -1172,6 +1172,17 @@
           - requestAnimationFrame 기반 → CSS 키프레임보다 안정적
           - hover 시 일시정지
     ─────────────────────────────────────────────────────────────── */
+    /* 썸네일 로드 실패 시 img만 교체 (카드 본문은 유지) */
+    function bscImgErr(img) {
+        var d = document.createElement('div');
+        d.className = 'bsc-thumb-placeholder';
+        d.textContent = '📖';
+        if (img.parentNode) {
+            img.parentNode.insertBefore(d, img);
+            img.parentNode.removeChild(img);
+        }
+    }
+
     function initSlider(track, pxPerSec) {
         // 원본 카드들만 먼저 측정
         requestAnimationFrame(function() {
@@ -1229,7 +1240,7 @@
             a.className = 'blog-slide-card';
 
             var thumbHTML = post.thumbnail
-                ? '<img class="bsc-thumb" src="' + post.thumbnail + '" alt="" loading="lazy" onerror="this.parentNode.innerHTML=\'<div class=bsc-thumb-placeholder>📖</div>\'">'
+                ? '<img class="bsc-thumb" src="' + post.thumbnail + '" alt="" loading="lazy" onerror="bscImgErr(this)">'
                 : '<div class="bsc-thumb-placeholder">📖</div>';
 
             var tags = (post.tags || '').split(',').map(function(t){ return t.trim(); }).filter(Boolean).slice(0,3);
