@@ -2,7 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aligomedia.co.kr/</loc>
-    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://aligomedia.co.kr/blog/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://aligomedia.co.kr/blog/20260827054909-쿠팡리뷰마케팅-체험-콘텐츠는-어떻게-운영하는-것이-좋을까요/</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aligomedia.co.kr/blog/20260825070557-변호사-언론홍보-고민하고-있을-떈-매체사-많은-이-곳/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aligomedia.co.kr/blog/20260821073418-병원언론홍보-브랜딩은-보도자료배포로-하자/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aligomedia.co.kr/blog/20260821065056-쿠팡-최신성-리뷰-찾아보고-가구매를-선택하자/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
