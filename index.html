@@ -841,6 +841,96 @@
                 margin-bottom: 3px; 
             }
         }
+
+    /* ── 상담 안내 팝업 ── */
+    #contact-popup-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.55);
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+    }
+    #contact-popup-overlay.active {
+        display: flex;
+    }
+    #contact-popup {
+        background: #fff;
+        border-radius: 16px;
+        padding: 36px 32px 28px;
+        max-width: 380px;
+        width: 90%;
+        text-align: center;
+        box-shadow: 0 8px 40px rgba(0,0,0,0.22);
+        position: relative;
+        animation: popupIn 0.28s ease;
+    }
+    @keyframes popupIn {
+        from { opacity:0; transform: scale(0.92) translateY(16px); }
+        to   { opacity:1; transform: scale(1)    translateY(0); }
+    }
+    #contact-popup .popup-badge {
+        display: inline-block;
+        background: #eef1fa;
+        color: #2e4a8f;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        padding: 4px 10px;
+        border-radius: 20px;
+        margin-bottom: 14px;
+    }
+    #contact-popup h3 {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: #1a1a1a;
+        margin: 0 0 8px;
+        line-height: 1.4;
+    }
+    #contact-popup .popup-sub {
+        font-size: 0.88rem;
+        color: #555;
+        margin-bottom: 22px;
+        line-height: 1.6;
+    }
+    #contact-popup .popup-btn-kakao {
+        display: block;
+        background: #FEE500;
+        color: #1a1a1a;
+        font-weight: 700;
+        font-size: 0.95rem;
+        padding: 13px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        margin-bottom: 12px;
+        transition: opacity 0.15s;
+    }
+    #contact-popup .popup-btn-kakao:hover { opacity: 0.85; }
+    #contact-popup .popup-alt {
+        font-size: 0.8rem;
+        color: #777;
+        line-height: 1.7;
+        background: #f7f8fa;
+        border-radius: 8px;
+        padding: 10px 14px;
+        margin-bottom: 20px;
+    }
+    #contact-popup .popup-alt strong {
+        color: #2e4a8f;
+        font-size: 0.92rem;
+    }
+    #contact-popup-close {
+        background: none;
+        border: 1px solid #ddd;
+        color: #888;
+        font-size: 0.82rem;
+        padding: 7px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.15s;
+    }
+    #contact-popup-close:hover { background: #f0f0f0; }
     </style>
 </head>
 <body>
@@ -1316,6 +1406,43 @@
                 var sec = document.getElementById('testimonial-section');
                 if (sec) sec.style.display = 'none';
             });
+    })();
+    </script>
+
+    <!-- ── 상담 안내 팝업 ── -->
+    <div id="contact-popup-overlay" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+        <div id="contact-popup">
+            <span class="popup-badge">📞 상담 안내</span>
+            <h3 id="popup-title">리뷰 마케팅 문의<br>바로 연결됩니다</h3>
+            <p class="popup-sub">아래 카카오 오픈채팅으로 문의주시면<br>빠르게 답변드립니다.</p>
+            <a href="https://open.kakao.com/me/aligomedia" target="_blank" rel="noopener noreferrer" class="popup-btn-kakao">💬 카카오 오픈채팅 상담하기</a>
+            <div class="popup-alt">
+                오픈채팅이 원활하지 않을 경우<br>
+                카톡 아이디 검색 → <strong>aligomediaad</strong><br>
+                으로 연락 부탁드립니다.
+            </div>
+            <button id="contact-popup-close">닫기</button>
+        </div>
+    </div>
+    <script>
+    (function() {
+        var overlay = document.getElementById('contact-popup-overlay');
+        var closeBtn = document.getElementById('contact-popup-close');
+        // 세션당 1회만 노출
+        if (!sessionStorage.getItem('contactPopupShown')) {
+            setTimeout(function() {
+                overlay.classList.add('active');
+                sessionStorage.setItem('contactPopupShown', '1');
+            }, 800);
+        }
+        function closePopup() { overlay.classList.remove('active'); }
+        closeBtn.addEventListener('click', closePopup);
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) closePopup();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closePopup();
+        });
     })();
     </script>
 </body>
